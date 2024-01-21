@@ -1,0 +1,12 @@
+2024/01/21-20:00:00.825 7260 Reusing MANIFEST C:\laragon\www\hitungcepat\session\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/01/21-20:00:00.826 7260 Recovering log #75
+2024/01/21-20:00:00.949 7260 Reusing old log C:\laragon\www\hitungcepat\session\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000075.log 
+2024/01/21-20:00:19.948 7260 Level-0 table #80: started
+2024/01/21-20:00:19.981 7260 Level-0 table #80: 1227809 bytes OK
+2024/01/21-20:00:19.983 7260 Delete type=0 #75
+2024/01/21-20:00:27.477 509c Compacting 1@1 + 1@2 files
+2024/01/21-20:00:27.561 509c Generated table #81@1: 63479 keys, 2061863 bytes
+2024/01/21-20:00:27.561 509c Compacted 1@1 + 1@2 files => 2061863 bytes
+2024/01/21-20:00:27.561 509c compacted to: files[ 0 0 1 0 0 0 0 ]
+2024/01/21-20:00:27.562 509c Delete type=2 #77
+2024/01/21-20:00:27.562 509c Delete type=2 #80
