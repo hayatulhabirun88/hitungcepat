@@ -120,7 +120,7 @@ client.on('message', msg => {
                     conn.query(`SELECT * FROM suara WHERE saksi_id = '${rsaksi[0].id}'`, (error, rsuara) => {
                         rsuara.forEach((item, index) => {
                             conn.query(`SELECT * FROM caleg WHERE id = '${item.caleg_id}'`, (error, rquerycaleg) => {
-                                
+                                client.sendMessage(msg.from, `No. ${rquerycaleg[0].no_urut} an. ${rquerycaleg[0].nama_caleg} dengan jumlah suara = ${item.jumlah}.`);
                             });
                         });
                     });
