@@ -44,19 +44,14 @@ client.on('ready', () => {
 
 client.on('message', msg => {
     console.log(`New message received from ${msg.from}: ${msg.body}`);
-    if (msg.body === '!ping') {
-		client.sendMessage(msg.from, 'pong');
-        console.log(msg.from);
-	}
 
     let pesanHitung = msg.body.toLowerCase();
-
     if (pesanHitung.includes('in.')) {
         // Mengambil nomor handphone dari database
         const selectQuery = `SELECT * FROM saksi WHERE no_hp = '${getPhoneNumber(msg.from)}'`;
     
         conn.query(selectQuery, (error, rsaksi) => {
-  
+    
             if (rsaksi.length > 0) {
                 hitung = pesanHitung.split('.');
                 
@@ -107,9 +102,7 @@ client.on('message', msg => {
                 client.sendMessage(msg.from, 'Anda belum terdaftar');
             }
         });
-	}
-
-    if (pesanHitung.includes('list')) {
+    } else if (pesanHitung.includes('list')) {
             // Mengambil nomor handphone dari database
             const selectQuery = `SELECT * FROM saksi WHERE no_hp = '${getPhoneNumber(msg.from)}'`;
 
@@ -129,6 +122,129 @@ client.on('message', msg => {
                     client.sendMessage(msg.from, 'Anda belum terdaftar');
                 }
             });
+    } else if (pesanHitung.includes('partai.')) {
+        // Mengambil nomor handphone dari database
+        const selectQuery = `SELECT * FROM saksi WHERE no_hp = '${getPhoneNumber(msg.from)}'`;
+
+        conn.query(selectQuery, (error, rsaksi) => {
+    
+            if (rsaksi.length > 0) {
+                hitung = pesanHitung.split('.');
+                
+                if (hitung.length == 2) {
+
+                    conn.query(`SELECT * FROM suara WHERE saksi_id = '${rsaksi[0].id}'`, (error, rsuara) => {
+
+                        conn.query(`SELECT * FROM partai WHERE no_partai = '${hitung[1]}'`, (error, rpartai) =>
+                        {
+                            client.sendMessage(msg.from, rpartai[0].nama_partai);
+                            
+                            if (rpartai.length > 0) {
+                                
+                                rsuara.forEach((item, index) => {
+                                    conn.query(`SELECT * FROM caleg WHERE id = '${item.caleg_id}' AND partai_id = '${hitung[1]}'`, (error, rquerycaleg) => {
+                                        if (rquerycaleg.length > 0) {
+                                            client.sendMessage(msg.from, `No. ${rquerycaleg[0].no_urut} an. ${rquerycaleg[0].nama_caleg} dengan jumlah suara = ${item.jumlah}.`);
+                                        } 
+                                    });
+                                });
+                            } else {
+                                client.sendMessage(msg.from, `Suara ${rpartai[0].nama_partai} belum satupun di input!`);
+                            }
+
+                        });
+
+                    });
+
+
+                } else {
+                    client.sendMessage(msg.from, 'Format yang anda ketik salah! masukan format dengan benar contoh: partai.3');
+                }
+
+            } else {
+                client.sendMessage(msg.from, 'Anda belum terdaftar');
+            }
+        });
+    } else if (pesanHitung.includes('id.')) {
+        // Mengambil nomor handphone dari database
+        const selectQuery = `SELECT * FROM saksi WHERE no_hp = '${getPhoneNumber(msg.from)}'`;
+
+        conn.query(selectQuery, (error, rsaksi) => {
+    
+            if (rsaksi.length > 0) {
+                hitung = pesanHitung.split('.');
+                
+                if (hitung.length == 2) {
+
+                    hitungCaleg = pesanHitung.split('#');
+
+                    console.log(hitungCaleg);
+                    
+
+                    if (hitungCaleg.length == 2) {
+
+                        hitungCalegArray = hitungCaleg[1].split(',');
+                        console.log(hitungCalegArray);
+                        let a = 1;
+                        for (let i = 0; i < hitungCalegArray.length; i++) {
+                            const jmlSuaraCaleg = hitungCalegArray[i];
+                            console.log(jmlSuaraCaleg);
+                            
+                            conn.query(`SELECT * FROM caleg WHERE partai_id = '${hitung[1]}' AND no_urut = '${a++}'`, (error, rcaleg) => {
+                                if(rcaleg.length > 0) {
+    
+                                    conn.query(`SELECT * FROM suara WHERE saksi_id = '${rsaksi[0].id}' AND caleg_id = '${rcaleg[0].id}' `, (error, rsuara) => {
+    
+                                        console.log(rsuara);
+        
+                                        if (rsuara.length > 0) {
+        
+                                            conn.query(`UPDATE suara SET jumlah = '${jmlSuaraCaleg}' WHERE id = '${rsuara[0].id}'`, (error, rupdatesuara) => {
+                                                if (error) {
+                                                    console.error('Error executing UPDATE query:', error.message);
+                                                } else {
+                                                    client.sendMessage(msg.from, `No. ${rcaleg[0].no_urut} an. ${rcaleg[0].nama_caleg} berhasil di update dengan jumlah suara = ${jmlSuaraCaleg}.`);
+                                                }
+                                            });
+        
+                                        } else {
+                                            console.log(rcaleg[0].nama_caleg);
+                
+                                            conn.query(`INSERT INTO suara (id, saksi_id, caleg_id, tps_id, jumlah) VALUES (NULL, ${rsaksi[0].id}, ${rcaleg[0].id}, ${rsaksi[0].tps_id}, ${jmlSuaraCaleg});
+                                            `, (error, rsuara) => {
+                                                if (error) {
+                                                    console.error('Error executing INSERT query:', error.message);
+                                                } else {
+                                                    client.sendMessage(msg.from, `No. ${rcaleg[0].no_urut} an. ${rcaleg[0].nama_caleg} berhasil di tambah dengan jumlah suara = ${jmlSuaraCaleg}.`);
+                                                }
+                
+                                            });
+                                        }
+        
+                                    })
+        
+                                } else {
+                                    client.sendMessage(msg.from, `Caleg tidak ditemukan.`);
+                                }
+                            });
+
+                        }
+                        
+
+                    } else {
+                        client.sendMessage(msg.from, 'Format yang anda ketik salah! masukan format dengan benar contoh: id.1#12,13,56,23');
+                    }
+
+                } else {
+                    client.sendMessage(msg.from, 'Format yang anda ketik salah! masukan format dengan benar contoh: id.1#12,13,56,23');
+                }
+
+            } else {
+                client.sendMessage(msg.from, 'Anda belum terdaftar');
+            }
+        });
+    } else {
+    client.sendMessage(msg.from, 'Selamat datang di layanan kami, *ketik dan kirim format WA* yang kami berikan dengan benar untuk menginputkan *DATA!*');
     }
 });
 
