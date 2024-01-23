@@ -1,3 +1,55 @@
-2024/01/22-22:54:23.946 4f38 Reusing MANIFEST C:\laragon\www\hitungcepat\session\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2024/01/22-22:54:23.946 4f38 Recovering log #157
-2024/01/22-22:54:23.983 4f38 Reusing old log C:\laragon\www\hitungcepat\session\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000157.log 
+2024/01/23-07:27:01.352 6c3c Reusing MANIFEST C:\laragon\www\hitungcepat\session\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/01/23-07:27:01.353 6c3c Recovering log #185
+2024/01/23-07:27:01.388 6c3c Reusing old log C:\laragon\www\hitungcepat\session\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000185.log 
+2024/01/23-07:28:48.740 60d8 Level-0 table #192: started
+2024/01/23-07:28:48.774 60d8 Level-0 table #192: 1202380 bytes OK
+2024/01/23-07:28:48.775 60d8 Delete type=0 #185
+2024/01/23-07:28:49.035 60d8 Compacting 1@1 + 3@2 files
+2024/01/23-07:28:49.142 60d8 Generated table #193@1: 87589 keys, 2237127 bytes
+2024/01/23-07:28:49.218 60d8 Generated table #194@1: 42279 keys, 2592179 bytes
+2024/01/23-07:28:49.274 60d8 Generated table #195@1: 39431 keys, 1179059 bytes
+2024/01/23-07:28:49.274 60d8 Compacted 1@1 + 3@2 files => 6008365 bytes
+2024/01/23-07:28:49.275 60d8 compacted to: files[ 0 0 3 0 0 0 0 ]
+2024/01/23-07:28:49.275 60d8 Delete type=2 #187
+2024/01/23-07:28:49.276 60d8 Delete type=2 #188
+2024/01/23-07:28:49.276 60d8 Delete type=2 #189
+2024/01/23-07:28:49.276 60d8 Delete type=2 #192
+2024/01/23-07:37:18.092 60d8 Level-0 table #197: started
+2024/01/23-07:37:18.124 60d8 Level-0 table #197: 1136616 bytes OK
+2024/01/23-07:37:18.126 60d8 Delete type=0 #191
+2024/01/23-07:37:18.194 1ecc Compacting 1@1 + 3@2 files
+2024/01/23-07:37:18.296 1ecc Generated table #198@1: 87916 keys, 2237881 bytes
+2024/01/23-07:37:18.373 1ecc Generated table #199@1: 41909 keys, 2614168 bytes
+2024/01/23-07:37:18.429 1ecc Generated table #200@1: 43008 keys, 1318763 bytes
+2024/01/23-07:37:18.429 1ecc Compacted 1@1 + 3@2 files => 6170812 bytes
+2024/01/23-07:37:18.429 1ecc compacted to: files[ 0 0 3 0 0 0 0 ]
+2024/01/23-07:37:18.430 1ecc Delete type=2 #193
+2024/01/23-07:37:18.430 1ecc Delete type=2 #194
+2024/01/23-07:37:18.430 1ecc Delete type=2 #195
+2024/01/23-07:37:18.430 1ecc Delete type=2 #197
+2024/01/23-07:38:21.754 1ecc Level-0 table #202: started
+2024/01/23-07:38:21.778 1ecc Level-0 table #202: 1162247 bytes OK
+2024/01/23-07:38:21.779 1ecc Delete type=0 #196
+2024/01/23-07:38:29.105 5dc4 Compacting 1@1 + 3@2 files
+2024/01/23-07:38:29.209 5dc4 Generated table #203@1: 88140 keys, 2239492 bytes
+2024/01/23-07:38:29.291 5dc4 Generated table #204@1: 43406 keys, 2624360 bytes
+2024/01/23-07:38:29.359 5dc4 Generated table #205@1: 45927 keys, 1467723 bytes
+2024/01/23-07:38:29.359 5dc4 Compacted 1@1 + 3@2 files => 6331575 bytes
+2024/01/23-07:38:29.360 5dc4 compacted to: files[ 0 0 3 0 0 0 0 ]
+2024/01/23-07:38:29.360 5dc4 Delete type=2 #198
+2024/01/23-07:38:29.361 5dc4 Delete type=2 #199
+2024/01/23-07:38:29.361 5dc4 Delete type=2 #200
+2024/01/23-07:38:29.361 5dc4 Delete type=2 #202
+2024/01/23-08:03:17.498 e8c Level-0 table #207: started
+2024/01/23-08:03:17.527 e8c Level-0 table #207: 1227062 bytes OK
+2024/01/23-08:03:17.528 e8c Delete type=0 #201
+2024/01/23-08:03:22.137 759c Compacting 1@1 + 3@2 files
+2024/01/23-08:03:22.242 759c Generated table #208@1: 88261 keys, 2238330 bytes
+2024/01/23-08:03:22.321 759c Generated table #209@1: 45657 keys, 2639075 bytes
+2024/01/23-08:03:22.386 759c Generated table #210@1: 48173 keys, 1625060 bytes
+2024/01/23-08:03:22.386 759c Compacted 1@1 + 3@2 files => 6502465 bytes
+2024/01/23-08:03:22.387 759c compacted to: files[ 0 0 3 0 0 0 0 ]
+2024/01/23-08:03:22.387 759c Delete type=2 #203
+2024/01/23-08:03:22.388 759c Delete type=2 #204
+2024/01/23-08:03:22.388 759c Delete type=2 #205
+2024/01/23-08:03:22.388 759c Delete type=2 #207

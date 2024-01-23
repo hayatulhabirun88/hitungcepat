@@ -1,5 +1,6 @@
 const mysql = require('mysql');
 const qrcode = require('qrcode-terminal');
+const validator = require('validator');
 const { Client, LocalAuth } = require('whatsapp-web.js');
 const client = new Client({
     authStrategy: new LocalAuth({
@@ -45,7 +46,8 @@ client.on('ready', () => {
 client.on('message', msg => {
     console.log(`New message received from ${msg.from}: ${msg.body}`);
 
-    let pesanHitung = msg.body.toLowerCase();
+    let pesanHitung = validator.escape(msg.body.toLowerCase());
+
     if (pesanHitung.includes('in.')) {
         // Mengambil nomor handphone dari database
         const selectQuery = `SELECT * FROM saksi WHERE no_hp = '${getPhoneNumber(msg.from)}'`;
@@ -137,9 +139,9 @@ client.on('message', msg => {
 
                         conn.query(`SELECT * FROM partai WHERE no_partai = '${hitung[1]}'`, (error, rpartai) =>
                         {
-                            client.sendMessage(msg.from, rpartai[0].nama_partai);
                             
                             if (rpartai.length > 0) {
+                                client.sendMessage(msg.from, rpartai[0].nama_partai);
                                 
                                 rsuara.forEach((item, index) => {
                                     conn.query(`SELECT * FROM caleg WHERE id = '${item.caleg_id}' AND partai_id = '${hitung[1]}'`, (error, rquerycaleg) => {
@@ -149,7 +151,7 @@ client.on('message', msg => {
                                     });
                                 });
                             } else {
-                                client.sendMessage(msg.from, `Suara ${rpartai[0].nama_partai} belum satupun di input!`);
+                                client.sendMessage(msg.from, `Partai dengan nomor urut =  ${hitung[1]} tidak ditemukan!`);
                             }
 
                         });
