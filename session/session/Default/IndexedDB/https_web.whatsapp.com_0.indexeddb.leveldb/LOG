@@ -1,3 +1,12 @@
-2024/02/04-05:10:51.329 6bb4 Reusing MANIFEST C:\laragon\www\hitungcepat\session\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2024/02/04-05:10:51.331 6bb4 Recovering log #111
-2024/02/04-05:10:51.585 6bb4 Reusing old log C:\laragon\www\hitungcepat\session\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000111.log 
+2024/02/04-19:55:13.589 514c Reusing MANIFEST C:\laragon\www\hitungcepat\session\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/02/04-19:55:13.590 514c Recovering log #129
+2024/02/04-19:55:13.710 514c Reusing old log C:\laragon\www\hitungcepat\session\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000129.log 
+2024/02/04-19:58:29.512 5f40 Level-0 table #136: started
+2024/02/04-19:58:29.544 5f40 Level-0 table #136: 1247118 bytes OK
+2024/02/04-19:58:29.546 5f40 Delete type=0 #129
+2024/02/04-19:58:42.598 3178 Compacting 1@1 + 3@2 files
+2024/02/04-19:58:42.691 3178 Generated table #137@1: 50888 keys, 2436279 bytes
+2024/02/04-19:58:42.771 3178 Generated table #138@1: 29162 keys, 2197034 bytes
+2024/02/04-19:58:42.864 3178 Generated table #139@1: 85033 keys, 1624820 bytes
+2024/02/04-19:58:42.864 3178 Compacted 1@1 + 3@2 files => 6258133 bytes
+2024/02/04-19:58:42.864 3178 compacted to: files[ 0 0 3 0 0 0 0 ]

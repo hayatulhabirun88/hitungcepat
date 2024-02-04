@@ -149,57 +149,95 @@ client.on('message', msg => {
 
                     hitungCaleg = pesanHitung.split('#');
 
-                    console.log(hitungCaleg);
-                    
-
                     if (hitungCaleg.length == 2) {
 
-                        hitungCalegArray = hitungCaleg[1].split(',');
-                        console.log(hitungCalegArray);
-                        let a = 1;
-                        for (let i = 0; i < hitungCalegArray.length; i++) {
-                            const jmlSuaraCaleg = hitungCalegArray[i];
-                            console.log(jmlSuaraCaleg);
+                        if (hitungCaleg[1] != "") {
                             
-                            conn.query(`SELECT * FROM calegs WHERE partai_id = '${hitung[1]}' AND no_urut = '${a++}'`, (error, rcaleg) => {
-                                if(rcaleg.length > 0) {
-    
-                                    conn.query(`SELECT * FROM suaras WHERE saksi_id = '${rsaksi[0].id}' AND caleg_id = '${rcaleg[0].id}' `, (error, rsuara) => {
-    
-                                        console.log(rsuara);
-        
-                                        if (rsuara.length > 0) {
-        
-                                            conn.query(`UPDATE suaras SET jumlah = '${jmlSuaraCaleg}' WHERE id = '${rsuara[0].id}'`, (error, rupdatesuara) => {
-                                                if (error) {
-                                                    console.error('Error executing UPDATE query:', error.message);
-                                                } else {
-                                                    client.sendMessage(msg.from, `No. ${rcaleg[0].no_urut} an. ${rcaleg[0].name} berhasil di update dengan jumlah suara = ${jmlSuaraCaleg}.`);
-                                                }
-                                            });
-        
-                                        } else {
-                                            console.log(rcaleg[0].name);
-                
-                                            conn.query(`INSERT INTO suaras  (id, saksi_id, caleg_id, tps_id,partai_id, jumlah) VALUES (NULL, ${rsaksi[0].id}, ${rcaleg[0].id}, ${rsaksi[0].tps_id}, ${rcaleg[0].partai_id}, ${jmlSuaraCaleg});
-                                            `, (error, rsuara) => {
-                                                if (error) {
-                                                    console.error('Error executing INSERT query:', error.message);
-                                                } else {
-                                                    client.sendMessage(msg.from, `No. ${rcaleg[0].no_urut} an. ${rcaleg[0].name} berhasil di tambah dengan jumlah suara = ${jmlSuaraCaleg}.`);
-                                                }
-                
-                                            });
-                                        }
-        
-                                    })
-        
-                                } else {
-                                    client.sendMessage(msg.from, `Caleg tidak ditemukan.`);
-                                }
-                            });
+                            hitungCalegArray = hitungCaleg[1].split(',');
 
+                            let a = 1;
+                            for (let i = 0; i < hitungCalegArray.length; i++) {
+    
+                                let jmlSuaraCaleg = hitungCalegArray[i];
+    
+                                if (i == 0) {
+                                    let hitungPartai = hitungCaleg[0].split('.');
+    
+                                    conn.query(`SELECT * FROM partai WHERE id = ${hitungPartai[1]}`, (error, rpartai) => {
+                                        if (rpartai.length > 0) {
+    
+                                            conn.query(`SELECT * FROM suaras WHERE saksi_id = '${rsaksi[0].id}' AND partai_id = '${rpartai[0].id}' AND caleg_id = 0 `, (error, rsuara) => {
+                                                
+                                                if (rsuara.length > 0) {
+                
+                                                    conn.query(`UPDATE suaras SET jumlah = '${jmlSuaraCaleg}' WHERE id = '${rsuara[0].id}'`, (error, rupdatesuara) => {
+                                                        if (error) {
+                                                            console.error('Error executing UPDATE query:', error.message);
+                                                        } else {
+                                                            client.sendMessage(msg.from, `No. ${rpartai[0].no_partai} an. ${rpartai[0].nama_partai} berhasil di update dengan jumlah suara = ${jmlSuaraCaleg}.`);
+                                                        }
+                                                    });
+                
+                                                } else {
+                                                    conn.query(`INSERT INTO suaras  (id, saksi_id, caleg_id, tps_id,partai_id, jumlah) VALUES (NULL, ${rsaksi[0].id}, 0, ${rsaksi[0].tps_id}, ${rpartai[0].id}, ${jmlSuaraCaleg});
+                                                    `, (error, rsuara) => {
+                                                        if (error) {
+                                                            console.error('Error executing INSERT query:', error.message);
+                                                        } else {
+                                                            client.sendMessage(msg.from, `No. ${rpartai[0].no_partai} an. ${rpartai[0].nama_partai} berhasil di tambah dengan jumlah suara = ${jmlSuaraCaleg}.`);
+                                                        }
+                        
+                                                    });
+                                                }
+                                            });
+    
+                                        } else {
+                                            client.sendMessage(msg.from, `Partai tidak ditemukan.`);
+                                        }
+                                    });
+                                } else {
+    
+                                    conn.query(`SELECT * FROM calegs WHERE partai_id = '${hitung[1]}' AND no_urut = '${a++}'`, (error, rcaleg) => {
+                                        if(rcaleg.length > 0) {
+            
+                                            conn.query(`SELECT * FROM suaras WHERE saksi_id = '${rsaksi[0].id}' AND caleg_id = '${rcaleg[0].id}' `, (error, rsuara) => {
+            
+                                                if (rsuara.length > 0) {
+                
+                                                    conn.query(`UPDATE suaras SET jumlah = '${jmlSuaraCaleg}' WHERE id = '${rsuara[0].id}'`, (error, rupdatesuara) => {
+                                                        if (error) {
+                                                            console.error('Error executing UPDATE query:', error.message);
+                                                        } else {
+                                                            client.sendMessage(msg.from, `No. ${rcaleg[0].no_urut} an. ${rcaleg[0].name} berhasil di update dengan jumlah suara = ${jmlSuaraCaleg}.`);
+                                                        }
+                                                    });
+                
+                                                } else {
+                                                    conn.query(`INSERT INTO suaras  (id, saksi_id, caleg_id, tps_id,partai_id, jumlah) VALUES (NULL, ${rsaksi[0].id}, ${rcaleg[0].id}, ${rsaksi[0].tps_id}, ${rcaleg[0].partai_id}, ${jmlSuaraCaleg});
+                                                    `, (error, rsuara) => {
+                                                        if (error) {
+                                                            console.error('Error executing INSERT query:', error.message);
+                                                        } else {
+                                                            client.sendMessage(msg.from, `No. ${rcaleg[0].no_urut} an. ${rcaleg[0].name} berhasil di tambah dengan jumlah suara = ${jmlSuaraCaleg}.`);
+                                                        }
+                        
+                                                    });
+                                                }
+                
+                                            })
+                
+                                        } else {
+                                            client.sendMessage(msg.from, `Caleg tidak ditemukan.`);
+                                        }
+                                    });
+                                }
+    
+                            }
+                        } else {
+                            client.sendMessage(msg.from, 'Format yang anda ketik salah! masukan format dengan benar contoh: id.1#12,13,56,23');
                         }
+
+
                         
                     } else {
                         client.sendMessage(msg.from, 'Format yang anda ketik salah! masukan format dengan benar contoh: id.1#12,13,56,23');
@@ -209,13 +247,6 @@ client.on('message', msg => {
                     client.sendMessage(msg.from, 'Format yang anda ketik salah! masukan format dengan benar contoh: id.1#12,13,56,23');
                 }
         
-            } else if (message.hasMedia) {
-                    // Unduh lampiran
-                const media = message.downloadMedia();
-
-                // Lakukan sesuatu dengan media, seperti menyimpan ke file
-                // Di sini, kita hanya menampilkan tipe media untuk tujuan demonstrasi
-                console.log(`Received ${media.type} from ${message.from}`);
             } else {
             client.sendMessage(msg.from, 'Selamat datang di layanan kami. \n 1. input data berdasarkan partai \n ketik i.[nomor urut partai]#[Jumlah Suara Nomor Urut 1],[Jumlah Suara Nomor Urut 2],[Jumlah Suara Nomor Urut 3],[Jumlah Suara Nomor Urut 4],[Jumlah Suara Nomor Urut ...] \n *contoh: i.4#12,22,33,21,25,67* \n 2. melihat hasil suara ketik p.[nomor urut partai] contoh: p.1 \n 3. menginput jumlah suara perorangan, a.[nomor urut partai].[nomor urut caleg].[jumlah suara] \n *contoh: a.4.1* %0 \n 4. melihat semua suara ketik LS');
             }
