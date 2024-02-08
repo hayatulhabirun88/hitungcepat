@@ -1,42 +1,6 @@
-[0204/195512.490:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'ambient-light-sensor'.", source:  (0)
-[0204/195512.491:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'.", source:  (0)
-[0204/195512.491:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'gamepad'.", source:  (0)
-[0204/195512.491:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'local-fonts'.", source:  (0)
-[0204/195512.492:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'window-management'.", source:  (0)
-[0204/201911.440:WARNING:dns_config_service_win.cc(509)] Failed to read DnsConfig.
-[0204/201916.465:WARNING:dns_config_service_win.cc(509)] Failed to read DnsConfig.
-[0204/201926.491:WARNING:dns_config_service_win.cc(509)] Failed to read DnsConfig.
-[0204/201934.384:INFO:CONSOLE(0)] "The FetchEvent for "https://web.whatsapp.com/img/favicon-error2_fb2afa4bfd23495c7bd2555bb080bb35.png" resulted in a network error response: the promise was rejected.", source:  (0)
-[0204/201934.385:INFO:CONSOLE(337)] "Uncaught (in promise) TypeError: Failed to fetch", source: https://web.whatsapp.com/serviceworker.js (337)
-[0204/201935.505:INFO:CONSOLE(0)] "The FetchEvent for "https://web.whatsapp.com/img/favicon-error2_fb2afa4bfd23495c7bd2555bb080bb35.png" resulted in a network error response: the promise was rejected.", source:  (0)
-[0204/201935.506:INFO:CONSOLE(337)] "Uncaught (in promise) TypeError: Failed to fetch", source: https://web.whatsapp.com/serviceworker.js (337)
-[0204/201936.579:INFO:CONSOLE(0)] "The FetchEvent for "https://web.whatsapp.com/img/favicon-error2_fb2afa4bfd23495c7bd2555bb080bb35.png" resulted in a network error response: the promise was rejected.", source:  (0)
-[0204/201936.580:INFO:CONSOLE(337)] "Uncaught (in promise) TypeError: Failed to fetch", source: https://web.whatsapp.com/serviceworker.js (337)
-[0204/201937.624:INFO:CONSOLE(0)] "The FetchEvent for "https://web.whatsapp.com/img/favicon-error2_fb2afa4bfd23495c7bd2555bb080bb35.png" resulted in a network error response: the promise was rejected.", source:  (0)
-[0204/201937.625:INFO:CONSOLE(337)] "Uncaught (in promise) TypeError: Failed to fetch", source: https://web.whatsapp.com/serviceworker.js (337)
-[0204/201938.688:INFO:CONSOLE(0)] "The FetchEvent for "https://web.whatsapp.com/img/favicon-error2_fb2afa4bfd23495c7bd2555bb080bb35.png" resulted in a network error response: the promise was rejected.", source:  (0)
-[0204/201938.688:INFO:CONSOLE(337)] "Uncaught (in promise) TypeError: Failed to fetch", source: https://web.whatsapp.com/serviceworker.js (337)
-[0204/201939.740:INFO:CONSOLE(0)] "The FetchEvent for "https://web.whatsapp.com/img/favicon-error2_fb2afa4bfd23495c7bd2555bb080bb35.png" resulted in a network error response: the promise was rejected.", source:  (0)
-[0204/201939.741:INFO:CONSOLE(337)] "Uncaught (in promise) TypeError: Failed to fetch", source: https://web.whatsapp.com/serviceworker.js (337)
-[0204/201940.788:INFO:CONSOLE(0)] "The FetchEvent for "https://web.whatsapp.com/img/favicon-error2_fb2afa4bfd23495c7bd2555bb080bb35.png" resulted in a network error response: the promise was rejected.", source:  (0)
-[0204/201940.789:INFO:CONSOLE(337)] "Uncaught (in promise) TypeError: Failed to fetch", source: https://web.whatsapp.com/serviceworker.js (337)
-[0204/201941.866:INFO:CONSOLE(0)] "The FetchEvent for "https://web.whatsapp.com/img/favicon-error2_fb2afa4bfd23495c7bd2555bb080bb35.png" resulted in a network error response: the promise was rejected.", source:  (0)
-[0204/201941.867:INFO:CONSOLE(337)] "Uncaught (in promise) TypeError: Failed to fetch", source: https://web.whatsapp.com/serviceworker.js (337)
-[0204/201942.944:INFO:CONSOLE(0)] "The FetchEvent for "https://web.whatsapp.com/img/favicon-error2_fb2afa4bfd23495c7bd2555bb080bb35.png" resulted in a network error response: the promise was rejected.", source:  (0)
-[0204/201942.945:INFO:CONSOLE(337)] "Uncaught (in promise) TypeError: Failed to fetch", source: https://web.whatsapp.com/serviceworker.js (337)
-[0204/201943.989:INFO:CONSOLE(0)] "The FetchEvent for "https://web.whatsapp.com/img/favicon-error2_fb2afa4bfd23495c7bd2555bb080bb35.png" resulted in a network error response: the promise was rejected.", source:  (0)
-[0204/201943.990:INFO:CONSOLE(337)] "Uncaught (in promise) TypeError: Failed to fetch", source: https://web.whatsapp.com/serviceworker.js (337)
-[0204/201945.100:INFO:CONSOLE(0)] "The FetchEvent for "https://web.whatsapp.com/img/favicon-error2_fb2afa4bfd23495c7bd2555bb080bb35.png" resulted in a network error response: the promise was rejected.", source:  (0)
-[0204/201945.101:INFO:CONSOLE(337)] "Uncaught (in promise) TypeError: Failed to fetch", source: https://web.whatsapp.com/serviceworker.js (337)
-[0204/201946.502:WARNING:dns_config_service_win.cc(509)] Failed to read DnsConfig.
-[0204/201947.190:INFO:CONSOLE(0)] "The FetchEvent for "https://web.whatsapp.com/img/favicon-error2_fb2afa4bfd23495c7bd2555bb080bb35.png" resulted in a network error response: the promise was rejected.", source:  (0)
-[0204/201947.191:INFO:CONSOLE(337)] "Uncaught (in promise) TypeError: Failed to fetch", source: https://web.whatsapp.com/serviceworker.js (337)
-[0204/201951.457:INFO:CONSOLE(0)] "The FetchEvent for "https://web.whatsapp.com/img/favicon-error2_fb2afa4bfd23495c7bd2555bb080bb35.png" resulted in a network error response: the promise was rejected.", source:  (0)
-[0204/201951.458:INFO:CONSOLE(337)] "Uncaught (in promise) TypeError: Failed to fetch", source: https://web.whatsapp.com/serviceworker.js (337)
-[0204/201959.934:INFO:CONSOLE(0)] "The FetchEvent for "https://web.whatsapp.com/img/favicon-error2_fb2afa4bfd23495c7bd2555bb080bb35.png" resulted in a network error response: the promise was rejected.", source:  (0)
-[0204/201959.935:INFO:CONSOLE(337)] "Uncaught (in promise) TypeError: Failed to fetch", source: https://web.whatsapp.com/serviceworker.js (337)
-[0204/202313.296:WARNING:dns_config_service_win.cc(509)] Failed to read DnsConfig.
-[0204/202313.669:WARNING:dns_config_service_win.cc(509)] Failed to read DnsConfig.
-[0204/202318.697:WARNING:dns_config_service_win.cc(509)] Failed to read DnsConfig.
-[0204/202328.726:WARNING:dns_config_service_win.cc(509)] Failed to read DnsConfig.
-[0204/202348.750:WARNING:dns_config_service_win.cc(509)] Failed to read DnsConfig.
+[0208/175907.400:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Feature window-management's parameters are ignored.", source:  (0)
+[0208/175907.400:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'ambient-light-sensor'.", source:  (0)
+[0208/175907.400:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'.", source:  (0)
+[0208/175907.400:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'gamepad'.", source:  (0)
+[0208/175907.400:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'local-fonts'.", source:  (0)
+[0208/175907.401:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'window-management'.", source:  (0)

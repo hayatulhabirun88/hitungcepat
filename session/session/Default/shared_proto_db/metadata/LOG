@@ -1,2 +1,3 @@
-2024/02/04-04:38:24.989 5e90 Creating DB C:\laragon\www\hitungcepat\session\session\Default\shared_proto_db\metadata since it was missing.
-2024/02/04-04:38:25.008 5e90 Reusing MANIFEST C:\laragon\www\hitungcepat\session\session\Default\shared_proto_db\metadata/MANIFEST-000001
+2024/02/08-17:46:23.764 be08 Reusing MANIFEST C:\laragon\www\hitungcepat\session\session\Default\shared_proto_db\metadata/MANIFEST-000001
+2024/02/08-17:46:23.764 be08 Recovering log #3
+2024/02/08-17:46:23.765 be08 Reusing old log C:\laragon\www\hitungcepat\session\session\Default\shared_proto_db\metadata/000003.log 
